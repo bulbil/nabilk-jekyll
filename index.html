@@ -1,0 +1,51 @@
+---
+layout: default
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>nabilk</title>
+
+    <link rel="stylesheet" href="../assets/main.css">
+</head>
+<body>
+    <div class="section">
+        <div id="blurb">
+            <p>Nabil Kashyap is a librarian plus he <span class="writes">writes</span>, <span class="talks">talks</span>, <span class="teaches">teaches</span>, and <span class="codes">puts things on the web</span>.</p>
+        </div>
+    </div>
+    {% for d in site.data.activity %}
+
+    {% for year in  d %}
+    <div class="section">
+
+    <p class="year">{{ year[0] }}</p>
+
+    {% for activities in year %}
+
+    {% for activity in activities %}
+    <div class="card {{ activity.tags | join: ' ' }}">
+
+    {% if activity.url %}<a href="{{ activity.url }}">{% endif %}
+    {{ activity.title | markdownify }}
+    {% if activity.url %}</a>{% endif %}
+    {{ activity.desc | markdownify }}
+    </div>
+    {% endfor %}
+
+    {% endfor %}
+    </div>
+
+    {% endfor %}
+    {% endfor %}
+
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+    crossorigin="anonymous"></script>
+    <script src="../assets/main.js"></script>
+</body>
+</html>

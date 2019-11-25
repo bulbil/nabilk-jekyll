@@ -1,0 +1,132 @@
+/* HELLO ! www.nabilk.com single page style 2019.11.24 */
+
+
+// variables
+
+$bodytype: 'Times New Roman Seven';
+$bodycolor: #000;
+$basesize: 22px;
+
+// breakpoints
+
+$medium: 640px;
+$big: 768px;
+
+$mediummaxwidth: 75%;
+$bigmaxwidth: 40%;
+
+// typography
+
+body {  
+    font-family: $bodytype, 'Times New Roman', serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: $basesize;
+    line-height: 1.8rem;
+    margin-bottom: 1.5242757143rem;
+    padding-top: .4757242857rem;
+    font-feature-settings:'kern', 'onum', 'liga';
+  }
+  
+  // Links.
+  a {
+    color: $bodycolor;
+    transition: color .25s;
+  
+    &:hover, &:active, &:focus {
+      color: lighten($bodycolor, 25%);
+      opacity: .8;
+      text-decoration: none;
+    }
+  }
+
+  .writes a:hover {
+    color: cyan;
+  }
+  .talks a:hover {
+    color: magenta;
+  }
+  .teaches a:hover {
+    color: yellow;
+  }
+  .codes a:hover {
+    color: black;
+  }
+
+
+// layout
+.section {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    overflow-x: hidden !important;
+    margin: 0;
+    padding: 0 .5em;
+
+    @media screen and (min-width: $big){
+      width: $bigmaxwidth * 1.5;
+      margin-left: $bigmaxwidth / 2;
+    }
+
+  }
+
+.section:first-of-type {
+    width: 100vw;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+// main container
+#blurb {
+    border: 2.5px solid $bodycolor;
+    padding: 1em;
+    margin-top: 1em;
+
+    width: 2 * $bigmaxwidth;
+    height: 2 * $bigmaxwidth;
+
+    text-align: justify;
+
+    span {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+    @media screen and (min-width: $medium) {
+        margin-top: $mediummaxwidth/5;
+        width: $mediummaxwidth;
+        height: $mediummaxwidth;
+    }
+    @media screen and (min-width: $big) {
+        margin-top: $bigmaxwidth/5;
+        width: $bigmaxwidth;
+        min-height: 40vh;
+    }
+
+}
+
+// cards
+
+.year {
+    width: 100%;
+    display: none;
+}
+
+div.card {
+    width: 100%;
+    display: none;
+    // padding: 0 .5em 0 .5em;
+
+    p {
+        font-size: $basesize * .75;
+    }
+
+    @media screen and (min-width: $big) {
+      width: 45%;
+  }
+}
+
+.year.show, .card.show {
+  display: block;
+}

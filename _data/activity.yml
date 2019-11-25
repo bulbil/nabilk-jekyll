@@ -1,0 +1,283 @@
+- 2019:
+# pubs
+  - title: "*Home Like*, Neighboring Systems"
+    desc: "(essay chapbook)"
+    url: https://www.facebook.com/neighboringsystems
+    tags: [writes,review]
+  - title: '"*H&G* by Anna Maria Hong," *Full Stop*'
+    desc: "(review)"
+    url: http://www.full-stop.net/2019/01/29/reviews/nabil-kashyap/hg-anna-maria-hong/
+    tags: [writes,review]
+# talks
+  - title: 'Digital Scholarship Research Institute, Bryn Mawr College'
+    desc: "Taught two day digital humanities training for faculty"
+    url: http://ds.swarthmore.edu/dsri/
+    tags: [talks,teaches] 
+  - title: 'Digital Scholarship Research Institute, Bryn Mawr College'
+    desc: "Taught two day digital humanities training for faculty"
+    url: http://ds.swarthmore.edu/dsri/
+    tags: [talks,teaches] 
+  - title: '"DH in the Classroom", Digital Resources and Methods Lab, Price Lab, University of Pennsylvania'
+    desc: "Taught digital humanities week-long training with Katie Rawson and Roberto Vargas"
+    tags: [talks,teaches] 
+  - title: 'Advanced Composition, Pennsylvania Academy of Fine Arts'
+    desc: "Invited speaker to a writing class taught by Emily Abendroth"
+    tags: [talks, writes]
+  - title: 'LIVE at the Writers House, Kelly Writers House and WXPN'
+    desc: "Invited reader for a long running poetry radio show"
+    url: http://writing.upenn.edu/wh/involved/series/live/#131
+    tags: [talks, writes]
+  - title: '"Travelogue in Flames," Association of Writers and Writing Programs Conference, Portland'
+    desc: "Moderated a panel with Caren Beilin, Steven Dunn, and Hilary Plum"
+    tags: [talks, writes]
+  - title: "Association for Computing in the Humanities Conference, Pittsburgh"
+    desc: Programming committee
+    tags: [other]
+  - title: "Lib/Lab Fellows"
+    desc: Lead undergraduate fellows from the humanities and computer science in learning code while reading in tech and society, 2016-present
+    url: http://ds.swarthmore.edu/fellows/
+    tags: [teaches]
+  - title: 'Ulises Books'
+    desc: Website for art book store and event series, 2017-
+  - title: "md => pdf"
+    desc: Script for turning md+css into pdf
+    url: https://github.com/bulbil/mdtopdf
+    tags: [codes]
+- 2018:
+# pubs
+  - title: '"*Black and Blur* by Fred Moten," *Full Stop*'
+    desc: "(review)"
+    url: http://www.full-stop.net/2018/02/27/reviews/nabil-kashyap/black-and-blur-fred-moten/
+    tags: [writes,review]
+# talks
+  - title: '"Shaping the (Co-)Curriculum: Adventures in Student Programs," Digital Library Federation, Las Vegas'
+    desc: "Panel participant"
+    tags: []
+  - title: '“Lorem ipsum is simply dummy text: An Experiment in Delamination,” PennDesign, University of Pennsylvania'
+    desc: 'Led a critical/making workshop for an experimental publication class on dissecting and "delaminating" text on the web'
+    url: https://github.com/bulbil/lorem
+    tags: [codes, teaches]
+  - title: 'Random Name Series, with Semyon Khokhlov'
+    tags: [writes, talks]
+  - title: 'Charmed Instruments Reading Series, with Anna Maria Hong and Kim Gek Lin'
+    tags: [writes, talks]
+# codes
+  - title: 'Creative Speculations for Philadelphia, Monument Lab'
+    desc: Interactive exhibit/documentation for Monument Lab project
+    url: http://proposals.monumentlab.com/
+    tags: [codes]
+  - title: 'How Are We Free?, LifeLines: Voices Against the Other Death Penalty'
+    desc: Web exhibit for traveling activist art project
+    tags: [codes]
+  - title: 'Friends, Peace, & Sanctuary, Swarthmore College'
+    desc: Website for public art project, a collaboration between book artists and refugees
+    url: http://fps.swarthmore.edu/
+    tags: [codes]
+- 2017:
+# pubs
+  - title: "*The Obvious Earth*, Carville Annex Press"
+    desc: "(essay collection)"
+    url: https://www.carvilleannexpress.com/shop/the-obvious-earth
+    tags: [writes]
+  - title: '"On Staying," *DIAGRAM* 17.2'
+    desc: "(essay)"
+    url: https://thediagram.com/17_2/kashyap.html
+    tags: [writes]
+  - title: '"*Days as Nights, Nights as Days* by Michel Leiris," *Full Stop*'
+    desc: "(review)"
+    url: http://www.full-stop.net/2017/08/24/reviews/nabil-kashyap/nights-as-days-days-as-nights-michel-leiris/
+    tags: [writes,review]
+  - title: '"*Me Against the World* by Kazufumi Shiaraishi," *Full Stop*'
+    desc: "(review)"
+    url: http://www.full-stop.net/2016/12/20/reviews/nabil-kashyap/me-against-the-world-kazufumi-shiraishi/
+    tags: [writes, review]
+# talks
+  - title: 'Contemporary Asian American Literature, Ursinus College'
+    desc: "Invited speaker to a literature course taught by Anna Maria Hong"
+    tags: [writes, talks]
+  - title: 'Black Bird Books, San Francisco with Sarah Fontaine and Caitlyn Galloway'
+    desc: "*The Obvious Earth* book launch event with Carville Annex Press"
+    tags: [writes, talks]
+  - title: "Wendy's Subway, Brooklyn"
+    desc: "Reading with Molly Prentiss"
+    tags: [writes, talks]
+  - title: 'Ulises Books'
+    desc: 'Reading with Caren Beilin and Tristan Dahn'
+    url: http://ulises.us/#reading-evening
+    tags: [writes, talks]
+  - title: 'The Working Library, Portland'
+    desc: 'Reading with Miranda Mellis'
+    tags: [writes, talks]
+  - title: 'Housework Series'
+    desc: Reading with Emily Abendroth and Hilary Plum, curated by Levi Bentley
+    tags: [writes, talks]
+  - title: '“Collections in Context(s)”, Coalition for Networked Information, Digital Scholarship Workshop, Brown University'
+    desc: Invited speaker
+    url: https://library.brown.edu/create/dspw17/schedule/
+    tags: [talks]
+  - title: '“MARCing the Boundary: Reusing Special Collections Records through the Early Novels Database”, Digital Humanities Conference, Montreal'
+    desc: Talk with Lindsay Van Tine
+    url: https://osf.io/mv5kb
+    tags: [talks]
+  - title: '“Preserving the Spark: Challenges in Archiving Activist Movements”, Society of American Archivists, Portland'
+    desc: Panel with Jarrett Drake, Michael Lotstein, Stephanie Bennett, and Lae’l Hughes-Watkins
+    url: https://archives2017.sched.com/event/ABHB/404-preserving-the-spark-challenges-in-archiving-activist-movements
+  - title: '“Collaborative Jekyll”, Keystone DH, Science History Institute'
+    desc: Static web development workshop with Roberto Vargas
+    tags: [talks, teaches, codes]
+# other
+  - title: 'Dolman Creative Writing Prize, Ursinus College'
+    desc: 'Invited to judge undergraduate creative writing prize'
+    tags: [other]
+  - title: 'Keystone DH Conference, Science History Institute'
+    url: http://keystonedh.network/2017/
+    desc: 'Organizing committee chair'
+    tags: [other]
+- 2016:
+# pubs
+  - title: '"*Voyager Record* by Michael Morena," *Full Stop*'
+    desc: "(review)"
+    url: http://www.full-stop.net/2016/10/27/reviews/nabil-kashyap/the-voyager-record-anthony-michael-morena/
+    tags: [writes,review]
+# talks
+  - title: '“Mediating Native Languages: The Navajo Verb Generator Project”, Keystone DH, University of Pittsburgh'
+    desc: Panel presentation
+    tags: [talks]
+  - title: '“Correcting the Narrative: Reconsidering the black student protest movement through active documents and documentary activism” (panel), Digital Blackness, Rutgers University'
+    desc: Panel presentation
+    tags: [talks]
+  - title: '“Jekyll for Librarians” (workshop), Digital Library Federation, Milwaukee'
+    desc: Static web development workshop with Roberto Vargas
+    tags: [talks, teaches, codes]
+- 2015:
+# talks
+  - title: '“Epistemology of Topic Modeling”, Society for Social Studies of Science, Denver'
+    desc: Panel presentation
+    tags: [talks]
+  - title: '“Swarthmore Projects for Educational Exploration and Development (SPEED): Promoting Public Scholarship in the Liberal Arts”, Bucknell University Digital Scholarship Conference'
+    desc: Panel presentation
+    tags: [talks]
+  - title: '“Black Liberation 1969: A Case Study in Risky DH and Activist Histories”, Keystone DH, University of Pennsylvania'
+    desc: Panel presentation
+    tags: [talks]
+- 2014:
+# pubs
+  - title: '“My City Year", *Actually People Quarterly*'
+    desc: "(column) 2010-2014"
+    url: https://www.carvilleannexpress.com/
+    tags: [writes]
+# talks
+  - title: 'First Ocean at Aux at Vox Populi, curated by Nathaniel Otting'
+    desc: Reading
+    tags: [talks, writes]
+  - title: 'Thinking Its Presence: Race and Creative Writing Conference, University of Montana'
+    desc: 'Invited reader'
+    tags: [talks, writes]
+  - title: '“The Material History of the Digital Archive”, p19 Victorian Information Culture Working Group, Temple University'
+    desc: Presentation with Megan Ward
+    url: http://p19.github.io/2014/12/11/Megan-Ward/
+    tags: [talks]
+  - title: '“Opening Library Data”, Library Company'
+    desc: Half-day workshop Laurie Allen, Doreva Belfiore, and Delphine Khanna
+    url: https://librarycompany.org/2015/02/23/digital-humanities-outreach-turning-library-records-into-data-workshop/
+    tags: [talks]
+  - title: '“Digital Scholarship Panel”. ACRL/Delaware Valley Chapter, University of Pennsylvania, Philadelphia'
+    desc: Panel presentation with Laurie Allen, Monica Mercado, and Matt Shoemaker
+    tags: [talks]
+  - title: '“Introduction to Cultural Heritage APIs”, THATCamp Philly, Science History Institute'
+    desc: Led a workshop on using APIs
+    tags: [talks, teaches, codes]
+# other
+  - title: '“Exploded View," *Mirrors, Marks and Loops* at Locks Gallery, Philadelphia'
+    desc: Collaboration with Matthew Suib and Nadia Hironaka
+    url: https://www.hironakasuib.com/portfolio/exploded-view
+    tags: [writes, other]
+# codes
+  - title: "Black Liberation Archive 1969"
+    desc: Digital archive for history course and research project led by Professor Allison Dorsey
+    url: https://blacklib1969.swarthmore.edu/about
+    tags: [codes]
+- 2013:
+# pubs
+  - title: '“Hometown Memories: Reading Memory and Materiality in Welcome to Pine Point,” *Topia: Canadian Journal of Cultural Studies* 29'
+    desc: "(essay)"
+    url: https://www.utpjournals.press/doi/abs/10.3138/topia.29.95
+    tags: [writes]
+  - title: '"Graze," *The Colorado Review* 39.3'
+    desc": "(poem)"
+    tags: [writes]
+# talks
+  - title: '“Practices in Use by Tourists," Headlands Center for the Arts, Sausalito'
+    desc: Multimedia performance
+    tags: [talks, writes]
+# other
+  - title: 'Artist-In-Residence, Headlands Center for the Arts'
+    tags: [writes, other]
+  - title: 'Career Enhancement Program Fellow, Association of Research Libraries'
+    tags: [other]
+# teach
+  - title: 'Graduate Student Instructor / School of Information, University of Michigan'
+    desc: 'SI 110: Introduction to Information Studies with Professor Finn Brunton'
+    tags: [teaches]
+- 2012:
+# talks
+  - title: '“Digital Curation Profile and Educational Needs”, Digital Curation Profiles Symposium, Purdue University'
+    desc: Panel with Suzie Allard and Elaine Martin 
+    tags: [talks]
+# teach
+  - title: 'Graduate Student Instructor / Slavic Languages & Literatures, University of Michigan'
+    desc: >
+      'SLAVIC 313: Russian & Ukrainian Cinema with Professor Herbert Eagle <br/>
+       SLAVIC 314: Polish Cinema with Professor Herbert Eagle'
+    tags: [teaches]
+- 2011:
+  # other
+  - title: '"Space Stations," Carville Annex, San Francisco'
+    desc: Collaborative essay with Llewelynn Fletcher
+    tags: [writes, talks]
+  - title: '"Music is A Living," Explorist International, San Francisco'
+    desc: Solo show of photography
+    tags: [other]
+  - title: 'Nonfiction Prize Finalist, Iowa Review'
+    tags: [writes, other]
+  - title: 'IRDW Diversity Scholarship, Association of Research Libraries'
+    tags: [other]
+  - title: 'Merit Scholarship, UM School of Information'
+    tags: [other]
+- 2010:   
+# pubs
+  - title: '“Blue in the Face” in *Cold Flashes: Literary Snapshots of Alaska*, University of Alaska Press'
+    desc: '(flash essay)'
+    tags: [writes]
+# other
+  - title: 'Vermont Studio Center Full Fellowship'
+    tags: [writes, other]
+- 2008:
+# pubs
+  - title: “In Defense of Swimming," *Seneca Review* 38.2
+    desc: "(essay)"
+    tags: [writes]
+  - title: “So Far the Grass,” *Versal* 6
+    desc: "(poem)"
+    tags: [writes]
+# other
+  - title: '"In Response," Big Sky Documentary Film Festival + Catalyst Gallery, Missoula'
+    desc: Invitational group show
+    tags: [other]
+# teach
+  - title: 'Adjunct Professor / English Department, University of Montana'
+    desc: >
+      'COMP 100: Basic College Writing <br/>
+      COMP 210: Argument & Rhetoric <br/>
+      CRWR 211: Poetry Workshop'
+    tags: [teaches]
+- 2007:
+# pubs
+  - title: '“*It* by Inger Christensen,” *CutBank* 66'
+    desc: "(review)"
+    tags: [writes, review]
+- 2006:
+# pubs
+  - title: '“*Starred Wire* by Ange Mlinko,” *CutBank* 65'
+    desc: "(review)"
+    tags: [writes, review]
