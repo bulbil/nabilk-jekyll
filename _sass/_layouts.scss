@@ -40,17 +40,24 @@ body {
     }
   }
 
+  span.writes:hover,
   .writes a:hover {
     color: cyan;
   }
+
+  span.talks:hover,
   .talks a:hover {
     color: magenta;
   }
+
+  span.teaches:hover,
   .teaches a:hover {
     color: yellow;
   }
+
+  span.codes:hover,
   .codes a:hover {
-    color: black;
+    color: gray;
   }
 
 
@@ -116,6 +123,7 @@ body {
 div.card {
     width: 100%;
     display: none;
+    opacity: 0;
     // padding: 0 .5em 0 .5em;
 
     p {
@@ -125,8 +133,34 @@ div.card {
     @media screen and (min-width: $big) {
       width: 45%;
   }
+  transition: opacity 500ms;
 }
 
 .year.show, .card.show {
   display: block;
+  // opacity: 1;
 }
+
+// scroll to top arrow
+#scrolltotop {
+  display: block;
+  position: fixed;
+  top: 85vh;
+  right: 0;
+
+  height: 2em;
+  width: 2em;
+  padding: .5em;
+  cursor: pointer;
+
+  text-align: center;
+  font-size: $basesize * 2;
+
+  opacity: 0;
+  transition: opacity 500ms;
+}
+
+#scrolltotop.show {
+  opacity: 1;
+}
+
