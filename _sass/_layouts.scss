@@ -4,96 +4,113 @@
 // variables
 
 $bodytype: 'Times New Roman Seven';
-$bodycolor: #000;
 $basesize: 22px;
+$cw: 475px;
+$ch: 275px;
+// colors
+
+$bodycolor: #000;
+$c: cyan;
+$m: magenta;
+$y: yellow;
+$k: gray;
 
 // breakpoints
 
 $medium: 640px;
 $big: 768px;
 
-$mediummaxwidth: 75%;
-$bigmaxwidth: 40%;
+
+
 
 // typography
 
-body {  
+body, html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  vertical-align: baseline;
+}
+
+body p{  
     font-family: $bodytype, 'Times New Roman', serif;
     font-style: normal;
-    font-weight: 300;
     font-size: $basesize;
-    line-height: 1.8rem;
-    margin-bottom: 1.5242757143rem;
-    padding-top: .4757242857rem;
+    line-height: 1.9rem;
     font-feature-settings:'kern', 'onum', 'liga';
   }
-  
-  // Links.
-  a {
-    color: $bodycolor;
-    transition: color .25s;
-  
-    &:hover, &:active, &:focus {
-      color: lighten($bodycolor, 25%);
-      opacity: .8;
-      text-decoration: none;
-    }
-  }
 
-  span.writes:hover,
-  .writes a:hover {
-    color: cyan;
-  }
+// links
 
-  span.talks:hover,
-  .talks a:hover {
-    color: magenta;
-  }
+#blurb span, a {
+  color: $bodycolor;
+  transition: color 350ms;
+}
 
-  span.teaches:hover,
-  .teaches a:hover {
-    color: yellow;
-  }
+#blurb span.writes:hover,
+.writes a:hover {
+  color: $c;
+}
 
-  span.codes:hover,
-  .codes a:hover {
-    color: gray;
-  }
+#blurb span.talks:hover,
+.talks a:hover {
+  color: $m;
+}
+
+#blurb span.teaches:hover,
+.teaches a:hover {
+  color: $y;
+}
+
+#blurb span.codes:hover,
+.codes a:hover {
+  color: $k;
+}
 
 
 // layout
 .section {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-content: center;
+    flex-flow: column;
     flex-wrap: wrap;
     overflow-x: hidden !important;
     margin: 0;
-    padding: 0 .5em;
-
-    @media screen and (min-width: $big){
-      width: $bigmaxwidth * 1.5;
-      margin-left: $bigmaxwidth / 2;
-    }
+    padding: 0 2em;
 
   }
 
 .section:first-of-type {
-    width: 100vw;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
+    min-height: 550px;
+    flex-flow: row;
+
+    @media screen and (min-width: $medium) {
+      min-height: unset;
+
+    }
 }
 
-// main container
+// blurb container
 #blurb {
     border: 2.5px solid $bodycolor;
-    padding: 1em;
-    margin-top: 1em;
+    display: block;
+    margin-top: 10em;
 
-    width: 2 * $bigmaxwidth;
-    height: 2 * $bigmaxwidth;
+    width: $cw;
+    min-width: $cw;
+    min-height: $ch;
+    height: $ch;
 
     text-align: justify;
+    transform: rotate(90deg);
+    transition: transform 500ms ease-in;
+
+    p {
+      padding: 1.25em;
+      font-size: 1.25 * $basesize;
+      line-height: 2rem;
+    }
 
     span {
         text-decoration: underline;
@@ -101,14 +118,10 @@ body {
     }
 
     @media screen and (min-width: $medium) {
-        margin-top: $mediummaxwidth/5;
-        width: $mediummaxwidth;
-        height: $mediummaxwidth;
-    }
-    @media screen and (min-width: $big) {
-        margin-top: $bigmaxwidth/5;
-        width: $bigmaxwidth;
-        min-height: 40vh;
+      margin-top: 5em;
+      margin-bottom: 2em;
+      transform: unset;
+
     }
 
 }
@@ -116,35 +129,32 @@ body {
 // cards
 
 .year {
-    width: 100%;
+    margin: 0;
+
     display: none;
+    font-weight: bold;
+    @media screen and (min-width: $medium){
+      margin-left: -3.5em;
+      margin-bottom: -2.34em;
+    }
 }
 
 div.card {
-    width: 100%;
+    max-width: $cw;
     display: none;
     opacity: 0;
-    // padding: 0 .5em 0 .5em;
-
-    p {
-        font-size: $basesize * .75;
-    }
-
-    @media screen and (min-width: $big) {
-      width: 45%;
-  }
   transition: opacity 500ms;
 }
 
 .year.show, .card.show {
   display: block;
-  // opacity: 1;
 }
 
 // scroll to top arrow
 #scrolltotop {
   display: block;
   position: fixed;
+  background-color: rgba(255,255,255,.8);
   top: 85vh;
   right: 0;
 

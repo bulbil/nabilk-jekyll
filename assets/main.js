@@ -55,7 +55,7 @@ function scrollToTop(scrollDuration) {
 
     // listener for hide/show scroll arrow
     d3.select(window).on('scroll', function(){
-        let currElTop = document.querySelector('.section:nth-child(3)')
+        let currElTop = document.querySelector('.row:nth-child(3)')
                             .getBoundingClientRect().top;
         console.log(currElTop < window.innerHeight)
         d3.select('#scrolltotop')
