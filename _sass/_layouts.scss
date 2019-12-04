@@ -20,8 +20,8 @@ $k: gray;
 $medium: 640px;
 $big: 768px;
 
-
-
+html { background-color: $c; }
+body { background-color: #fff; }
 
 // typography
 
@@ -30,6 +30,9 @@ body, html {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   vertical-align: baseline;
+
+  overflow-x: hidden !important;
+  
 }
 
 body p{  
@@ -69,38 +72,38 @@ body p{
 
 
 // layout
-.section {
+.container {
+
     display: flex;
-    justify-content: center;
     align-content: center;
     flex-flow: column;
     flex-wrap: wrap;
-    overflow-x: hidden !important;
-    margin: 0;
-    padding: 0 2em;
-
+    z-index: 7;
+    min-height: 100vh;
+    min-width: 100vw;
+    padding: 0;
   }
 
-.section:first-of-type {
-    min-height: 550px;
-    flex-flow: row;
+// blurb container
+$b: 5px solid black;
 
-    @media screen and (min-width: $medium) {
-      min-height: unset;
+#blurb {
+  z-index: 9;
+  background-color: rgba(0,0,0,0);
+  width: $cw;
+  min-width: $cw;
+  min-height: $ch;
+  height: $ch;
+  margin-top: 10em;
+  margin-bottom: 8em;
 
-    }
+  border-top: $b;
+  border-right: $b;
+  border-left: $b;
 }
 
-// blurb container
-#blurb {
-    border: 2.5px solid $bodycolor;
+#blurb, svg {
     display: block;
-    margin-top: 10em;
-
-    width: $cw;
-    min-width: $cw;
-    min-height: $ch;
-    height: $ch;
 
     text-align: justify;
     transform: rotate(90deg);
@@ -127,12 +130,16 @@ body p{
 }
 
 // cards
-
+.row {
+  margin: 1.25em;
+}
 .year {
     margin: 0;
 
-    display: none;
+    // display: none;
     font-weight: bold;
+    display: block;
+    opacity: 1;
     @media screen and (min-width: $medium){
       margin-left: -3.5em;
       margin-bottom: -2.34em;
@@ -140,10 +147,14 @@ body p{
 }
 
 div.card {
-    max-width: $cw;
-    display: none;
-    opacity: 0;
+  max-width: $cw;
+  // display: none;
+  // opacity: 0;
+  display: block;
+  opacity: 1;
+
   transition: opacity 500ms;
+  z-index: 9;
 }
 
 .year.show, .card.show {
@@ -174,3 +185,33 @@ div.card {
   opacity: 1;
 }
 
+// doodad
+svg {
+  position: absolute;
+  // top: 93.5px;
+  // left: auto;
+  z-index: -1;
+
+  width: $cw;
+  min-width: $cw;
+  min-height: 1.5 * $ch;
+  height: 1.5 * $ch;
+
+  margin-top: 0;
+
+  path {
+    fill: transparent;
+    mix-blend-mode: darken;
+    stroke-width: 5px;
+    padding: 0;
+  }
+
+  path#cyan { stroke: darken($c,5%); }
+  path#magenta { stroke: darken($m,5%); }
+  path#yellow { stroke: $y; }
+
+  @media screen and (min-width: $medium) {
+    margin-top: 0;
+    top: 14px;
+  }
+}

@@ -17,19 +17,21 @@ function scrollToTop(scrollDuration) {
     window.requestAnimationFrame(step);
 }
 
+const t = d3.transition()
+.duration(750)
+.ease(d3.easeLinear);
+
+function isShown(el,show) {
+
+    let opacity = show ? 1 : 0;
+    el.transition(t)
+        .style('opacity', opacity);
+    el.classed('show',show);
+}
+
 (function () {
 
     let currCategory = 0;
-    const t = d3.transition()
-    .duration(750)
-    .ease(d3.easeLinear);
-
-    function isShown(el,show) {
-        let opacity = show ? 1 : 0;
-        el.transition(t)
-        .style('opacity', opacity);
-        el.classed('show',show);
-    }
 
     // listeners for selecting categories
     d3.selectAll('#blurb span').on('click', function(){
@@ -61,5 +63,76 @@ function scrollToTop(scrollDuration) {
         d3.select('#scrolltotop')
             .classed('show',currElTop < window.innerHeight);
     })
+ 
+    // sine wave doodad
+
+    const height = 343.5,
+    width = 475,
+    colors = ['cyan','magenta','yellow'],
+    xScale = d3.scaleLinear(),
+    yScale = d3.scaleLinear(),
+    // xRange = d3.range(0,2*Math.PI,Math.PI/10),
+    xRange = d3.range(0,2.1*Math.PI,2*Math.PI/20),
+    offset = .25 * Math.PI,
+    hFactor = 10,
+    yRange = d3.range(0,height,height/10).concat(d3.range(0,height,height/11).reverse()),
+    data = xRange.map( (d,i) => [ d, 0] ),
+    el = d3.select('svg'),
+    blurb = d3.select('#blurb');
+
+    let currData = data.slice(0),
+        currMouseY = 0,
+        timer;
+
+    xScale.domain([0, 2*Math.PI])
+        .range([0, width]);
+
+    // yScale.domain([Math.PI/2,-Math.PI/2])
+    //     .range([height,0]);
+        yScale.domain([0,height/hFactor])
+        .range([height,0]);
+
+    const sine = d3.line()
+        .x(d => xScale(d[0]))
+        .y(d => yScale(Math.sin(d[1])))
+        .curve(d3.curveMonotoneX);
+
+    const lines = el.selectAll('path')
+        .data(colors)
+        .enter()
+        .append('path')
+        .attr('id', d => d)
+        .attr('d', sine(currData));
+
+    function updatePath(reset = false) {
+
+    lines.interrupt();
+
+    lines.transition()
+        .ease(d3.easeCircleOut)
+        .duration(300)
+        .attr('d', function(d,i) {
+            let index = i;
+            let yFactor = reset !== false ? 0 : (height/10 - currMouseY)/hFactor - (Math.pow(-1,index) * index * offset);
+            currData = xRange.map( (d,i) => [d, Math.sin(yRange[i] * yFactor)]);
+
+            return sine(currData) 
+            });  
+    }
+
+    function handleMove(d) {
+
+    currMouseY = d3.mouse(el.node()) !== null ? d3.mouse(el.node())[1] : 0;
+    updatePath();
+
+    clearTimeout(timer);
+    timer=setTimeout(handleMoveEnd,300);
+    }
+
+    function handleMoveEnd(d) {
+    updatePath(true);
+    }
+
+    blurb.on('mousemove | touchmove', d => handleMove(d) );
 
 }());
