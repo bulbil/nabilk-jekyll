@@ -236,7 +236,7 @@ svg {
   path#magenta { stroke: darken($m,5%); }
   path#yellow { stroke: $y; }
 
-  @media screen and (min-width: $medium) {
+  @media screen and (min-width: 815px) {
     top: -112.5px;
   }
 }
