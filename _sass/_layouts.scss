@@ -51,22 +51,22 @@ body p{
 }
 
 #blurb span.writes:hover,
-.writes a:hover {
+.writes a:hover{
   color: $c;
 }
 
 #blurb span.talks:hover,
-.talks a:hover {
+.talks a:hover{
   color: $m;
 }
 
 #blurb span.teaches:hover,
-.teaches a:hover {
+.teaches a:hover{
   color: $y;
 }
 
 #blurb span.codes:hover,
-.codes a:hover {
+.codes a:hover{
   color: $k;
 }
 
@@ -115,7 +115,7 @@ body {
 
 
 // blurb container
-$b: 5px solid black;
+$b: 5px solid;
 
 #blurb {
   z-index: 0;
@@ -125,13 +125,17 @@ $b: 5px solid black;
   height: $ch;
   min-height: $ch;
 
-  border-top: $b;
-  border-right: $b;
-  border-left: $b;
+  border: $b rgba(0,0,0,0);
+  border-bottom: none;
 
   text-align: justify;
   transform: translate(-10%,45%) rotate(90deg);
-  transition: transform 500ms ease-in;
+  transition: border 500ms, transform 500ms ease-in;
+
+  &.bordered {
+    border: $b rgba(0,0,0,1) ;
+    border-bottom: none;
+  }
 
   @media screen and (min-width: $medium) {
     margin: 1.25em auto 1em auto;
@@ -168,55 +172,57 @@ $b: 5px solid black;
     opacity: 0;
     font-weight: bold;
     width: 100%;
+
+    transition: opacity 250ms ease-in;
 }
 
-div.card {
+.card {
   max-width: $cw;
   display: none;
   opacity: 0;
-
-  transition: opacity 500ms;
   z-index: 5;
+
+  transition: opacity 250ms ease-in;
 
   @media screen and (min-width: $medium){
     min-width: $cw;
   }
 }
 
-.year.show, .card.show {
+.year.show,
+.card.show, 
+#scrolltotop.show {
   display: block;
 }
 
 // scroll to top arrow
 #scrolltotop {
-  display: block;
   position: fixed;
-  background-color: rgba(255,255,255,.8);
-  z-index: 9;
-  top: 85vh;
-  right: 0;
+  bottom: 5vh;
+  left: 50%;
 
-  height: 2em;
-  width: 2em;
-  padding: .5em;
-  cursor: pointer;
-
-  text-align: center;
-  font-size: $basesize * 2;
-
+  display: none;
   opacity: 0;
-  transition: opacity 500ms;
-}
 
-#scrolltotop.show {
-  opacity: 1;
+  height: 1em;
+  width: 1em;
+  padding: .25em .25em .5em .25em;
+
+  z-index: 9;
+
+  outline: $b;
+  background-color: rgba(255,255,255,.8);
+  font-size: $basesize * 2;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
 }
 
 // doodad
 svg {
   display: block;
   position: relative;
-  top: -88px;
+  top: -89px;
   right: 2.5px;
   z-index: -1;
 
@@ -230,13 +236,13 @@ svg {
     mix-blend-mode: darken;
     stroke-width: 5px;
     padding: 0;
+    opacity: 0;
+
+    transition: opacity;
   }
 
   path#cyan { stroke: darken($c,5%); }
   path#magenta { stroke: darken($m,5%); }
   path#yellow { stroke: $y; }
 
-  @media screen and (min-width: 815px) {
-    top: -112.5px;
-  }
 }
