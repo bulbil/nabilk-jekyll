@@ -9,14 +9,18 @@ layout: default
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>nabilk</title>
 
-    <link rel="stylesheet" href="../assets/main.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/main.css?v=2.0.7">
 </head>
 <body>
-    <div class="container">
-        <svg></svg>
+
+    <div class="section">
         <div id="blurb">
-            <p>Nabil Kashyap is a librarian plus he <span class="writes">writes</span>, <span class="talks">talks</span>, <span class="teaches">teaches</span>, and <span class="codes">puts things on the web</span>.</p>
+        <p>Nabil Kashyap is a librarian plus he <span class="writes">writes</span>, <span class="talks">talks</span>, <span class="teaches">teaches</span>, and <span class="codes">puts things on the web</span>.</p>
+        <svg></svg>
         </div>
+    </div>
+
+    <div class="section">
 
     {% for d in site.data.activity %}
 
@@ -51,6 +55,6 @@ layout: default
     integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
     crossorigin="anonymous"></script>
     <script src="https://d3js.org/d3.v5.min.js"></script>
-    <script src="../assets/main.js"></script>
+    <script src="{{ site.baseurl }}/assets/main.js"></script>
 </body>
 </html>

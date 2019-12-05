@@ -66,8 +66,8 @@ function isShown(el,show) {
  
     // sine wave doodad
 
-    const height = 343.5,
-    width = 475,
+    const height = 100,
+    width = 480,
     colors = ['cyan','magenta','yellow'],
     xScale = d3.scaleLinear(),
     yScale = d3.scaleLinear(),
