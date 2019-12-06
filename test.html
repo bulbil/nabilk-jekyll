@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+    body div:first-of-type {
+        width: 100%;
+        height: 2.5rem;
+    }
+
+    body>div:nth-child(2){
+        width: 100%;
+        min-height: 100vh;
+        border: 1px solid black;
+        display: flex;
+        flex-flow: column;
+        align-content: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    body div div {
+        display: none;
+        max-width: 50%;
+        height: 50px;
+        margin-bottom: .5rem;
+        background-color: magenta;
+        opacity: 0;
+        transition: opacity 500ms;
+    }
+
+    .show {
+        opacity: 1;
+    }
+    </style>
+</head>
+<body>
+    <div>
+    <button>button</button>
+    </div>
+    <div>
+        <div> </div>
+        <div> </div>
+        <div> </div>
+    </div>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+
+    <script>
+        let click = true;
+        d3.select('button').on('click', function(){
+
+            let divs = d3.selectAll('body div div');
+                console.log(click)
+                divs.interrupt();
+
+                if(click){
+                    divs.style('display', "block")
+                        .transition()
+                        .on('end', function() {
+                            console.log('hi')
+                            divs.classed('show', true)
+                        });
+                } else {
+            
+                    divs.classed('show',false)
+                        .transition()
+                        .delay(500)
+                        .style('display', 'none')
+                }
+            click = !click;
+        });
+    </script>
+
+</body>
+</html>

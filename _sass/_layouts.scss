@@ -8,6 +8,10 @@ $basesize: 22px;
 $cw: 475px;
 $ch: 275px;
 
+@mixin transition() {
+  transition: opacity 500ms ease-in; 
+}
+
 // colors
 
 $bodycolor: #000;
@@ -20,9 +24,6 @@ $k: gray;
 
 $medium: 640px;
 $big: 960px;
-
-html { background-color: $c; }
-body { background-color: #fff; }
 
 // typography
 
@@ -76,9 +77,10 @@ body p{
 body {
   display: flex;
   justify-content: flex-start;
-  align-content: center;
+  // align-content: center;
+  align-content: stretch;
   flex-flow: column;
-  min-height: 100vh;
+  // min-height: 50rem;
 
   @media screen and (min-width: $big) {
     flex-flow: row;
@@ -91,7 +93,6 @@ body {
     padding: 0;
 
     &:first-of-type{
-      // display: none;
       justify-content: flex-start;
     }
 
@@ -130,7 +131,7 @@ $b: 5px solid;
 
   text-align: justify;
   transform: translate(-10%,45%) rotate(90deg);
-  transition: border 500ms, transform 500ms ease-in;
+  transition: border 250ms ease-in, transform 500ms ease-in;
 
   &.bordered {
     border: $b rgba(0,0,0,1) ;
@@ -173,7 +174,7 @@ $b: 5px solid;
     font-weight: bold;
     width: 100%;
 
-    transition: opacity 250ms ease-in;
+    @include transition();
 }
 
 .card {
@@ -182,24 +183,24 @@ $b: 5px solid;
   opacity: 0;
   z-index: 5;
 
-  transition: opacity 250ms ease-in;
-
   @media screen and (min-width: $medium){
     min-width: $cw;
   }
+
+  @include transition();
 }
 
 .year.show,
 .card.show, 
 #scrolltotop.show {
-  display: block;
+  opacity: 1;
 }
 
 // scroll to top arrow
 #scrolltotop {
   position: fixed;
-  bottom: 5vh;
-  left: 50%;
+  bottom: 1em;
+  left: calc(50% - .5em);
 
   display: none;
   opacity: 0;
@@ -216,6 +217,8 @@ $b: 5px solid;
   font-weight: bold;
   text-align: center;
   cursor: pointer;
+
+  @include transition();
 }
 
 // doodad
@@ -238,11 +241,15 @@ svg {
     padding: 0;
     opacity: 0;
 
-    transition: opacity;
+    @include transition();
   }
 
   path#cyan { stroke: darken($c,5%); }
   path#magenta { stroke: darken($m,5%); }
   path#yellow { stroke: $y; }
+
+  path.show {
+    opacity: 1;
+  }
 
 }

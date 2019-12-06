@@ -17,53 +17,62 @@ function scrollToTop(scrollDuration) {
     window.requestAnimationFrame(step);
 }
 
-const t = d3.transition()
-        .duration(300)
-        .ease(d3.easeLinear);
-
 function isShown(el,show) {
 
-    let opacity = show ? 1 : 0;
-
-    el.interrupt();
-    el.classed('show',show)
-        .transition(t)
-        .style('opacity',opacity);
+        if(show){
+            el.style('display', 'block')
+                .transition()
+                .on('end', function() { el.classed('show', true) });
+        } else {
+            el.classed('show',false)
+                .transition()
+                .style('display', 'none')
+        }
     }
 
 (function () {
 
-    let currCategory = 0;
+    let currCategory = 0,
+    scrollArrow = d3.select('#scrolltotop');
 
     // listeners for selecting categories
     d3.selectAll('#blurb span').on('click', function(){
-        let cards = d3.selectAll('.card.show,.year.show')
-        isShown(cards,false);
 
         currCategory = d3.select(this).attr('class');
 
-        let currShown = d3.selectAll('.card.' + currCategory)
-        isShown(currShown,true);
+        let rows = d3.selectAll('.row').each(function() {
 
-        currShown.each(function(){ 
+            let currRow = d3.select(this);
 
-            let year = d3.select(this.parentNode).select('.year')
-            isShown(year,true);
-        });
+            isShown(currRow.select('.year'), 
+                !currRow.select('.card.' + currCategory).empty());
+            
+            currRow.selectAll('.card').each(function(){
+                let currCard = d3.select(this);
+                isShown(currCard, currCard.attr('class').includes(currCategory) );
+            });
+        })
     });
 
     // listener for scrolling to the top
     d3.select('#scrolltotop').on("click",function(){
         scrollToTop(500);
-        isShown(d3.select('#scrolltotop'),currElTop < window.innerHeight);
-
     })
 
+
     // listener for hide/show scroll arrow
+    let isShownArrow = false;
+
     d3.select(window).on('scroll', function(){
         let currElTop = d3.select('.row:nth-child(3) .year').node()
                             .getBoundingClientRect().top;
-        isShown(d3.select('#scrolltotop'),currElTop < window.innerHeight);
+
+        let showArrow = currElTop !== 0 && currElTop < window.innerHeight ? true : false;
+
+        if(showArrow !== isShownArrow){
+            isShown(scrollArrow, showArrow);
+            isShownArrow = showArrow;
+        }
     })
  
     // sine wave doodad
@@ -73,7 +82,6 @@ function isShown(el,show) {
     colors = ['cyan','magenta','yellow'],
     xScale = d3.scaleLinear(),
     yScale = d3.scaleLinear(),
-    // xRange = d3.range(0,2*Math.PI,Math.PI/10),
     xRange = d3.range(0,2.1*Math.PI,2*Math.PI/20),
     offset = .25 * Math.PI,
     hFactor = 10,
@@ -104,11 +112,8 @@ function isShown(el,show) {
         .attr('id', d => d)
         .attr('d', sine(currData));
 
-    lines.transition(t)
-        .style('opacity',1)
-        .call(function(d){
-            d3.select('#blurb').classed('bordered',true);
-        });
+    lines.classed('show',true);
+    blurb.classed('bordered',true);
 
     function updatePath(reset = false) {
 
