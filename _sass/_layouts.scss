@@ -138,7 +138,7 @@ $b: 5px solid;
   }
 
   @media screen and (min-width: $medium) {
-    margin: 1.25em auto 1em auto;
+    margin: 1.25rem auto 1rem auto;
   }
 
   @media screen and (min-width: $medium) {
@@ -149,6 +149,7 @@ $b: 5px solid;
     padding: 2em 1.25em 2em 1.25em;
     font-size: 1.25 * $basesize;
     line-height: 2rem;
+    height: 96px;
     z-index: 1;
   }
 
@@ -223,6 +224,8 @@ svg {
   position: relative;
   top: -89px;
   right: 2.5px;
+  // top: -10rem;
+  // right: .5rem;
   z-index: -1;
 
   width: $cw + 5px;
