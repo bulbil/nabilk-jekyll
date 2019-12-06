@@ -1,23 +1,30 @@
+(function () {
 
-// Thanks @robbendebiene! https://stackoverflow.com/a/24559613
-// jQuery free scroll to top
+    const scrollArrow = d3.select('#scrolltotop'),
+        blurb = d3.select('#blurb');
 
-function scrollToTop(scrollDuration) {
-    var cosParameter = window.scrollY / 2,
-        scrollCount = 0,
-        oldTimestamp = performance.now();
-    function step (newTimestamp) {
-        scrollCount += Math.PI / (scrollDuration / (newTimestamp - oldTimestamp));
-        if (scrollCount >= Math.PI) window.scrollTo(0, 0);
-        if (window.scrollY === 0) return;
-        window.scrollTo(0, Math.round(cosParameter + cosParameter * Math.cos(scrollCount)));
-        oldTimestamp = newTimestamp;
+    let currCategory = 'hi',
+        isShownArrow = false,
+        currMouseY = 0;
+
+    // Thanks @robbendebiene! https://stackoverflow.com/a/24559613
+    // jQuery free scroll to top
+    function scrollToTop(scrollDuration) {
+        let cosParameter = window.scrollY / 2,
+            scrollCount = 0,
+            oldTimestamp = performance.now();
+        function step (newTimestamp) {
+            scrollCount += Math.PI / (scrollDuration / (newTimestamp - oldTimestamp));
+            if (scrollCount >= Math.PI) window.scrollTo(0, 0);
+            if (window.scrollY === 0) return;
+            window.scrollTo(0, Math.round(cosParameter + cosParameter * Math.cos(scrollCount)));
+            oldTimestamp = newTimestamp;
+            window.requestAnimationFrame(step);
+        }
         window.requestAnimationFrame(step);
     }
-    window.requestAnimationFrame(step);
-}
 
-function isShown(el,show) {
+    function isShown(el,show) {
 
         if(show){
             el.style('display', 'block')
@@ -30,44 +37,28 @@ function isShown(el,show) {
         }
     }
 
-(function () {
-
-    let currCategory = 0,
-    scrollArrow = d3.select('#scrolltotop');
-
     // listeners for selecting categories
-    d3.selectAll('#blurb span').on('click', function(){
-
+    blurb.selectAll('a').on('click', function(){
+        d3.event.preventDefault();
         currCategory = d3.select(this).attr('class');
 
         let rows = d3.selectAll('.row').each(function() {
 
             let currRow = d3.select(this);
-
-            isShown(currRow.select('.year'), 
-                !currRow.select('.card.' + currCategory).empty());
-            
-            currRow.selectAll('.card').each(function(){
-                let currCard = d3.select(this);
-                isShown(currCard, currCard.attr('class').includes(currCategory) );
-            });
+            isShown(currRow, currRow.attr('id') == currCategory)
         })
     });
 
     // listener for scrolling to the top
     d3.select('#scrolltotop').on("click",function(){
+        d3.event.preventDefault();
         scrollToTop(500);
     })
 
-
     // listener for hide/show scroll arrow
-    let isShownArrow = false;
-
     d3.select(window).on('scroll', function(){
-        let currElTop = d3.select('.row:nth-child(3) .year').node()
-                            .getBoundingClientRect().top;
-
-        let showArrow = currElTop !== 0 && currElTop < window.innerHeight ? true : false;
+        let currTop = document.body.getBoundingClientRect().top;
+        showArrow = -currTop > window.innerHeight ? true : false;
 
         if(showArrow !== isShownArrow){
             isShown(scrollArrow, showArrow);
@@ -87,11 +78,9 @@ function isShown(el,show) {
     hFactor = 10,
     yRange = d3.range(0,height,height/10).concat(d3.range(0,height,height/11).reverse()),
     data = xRange.map( (d,i) => [ d, 0] ),
-    el = d3.select('svg'),
-    blurb = d3.select('#blurb');
+    el = d3.select('svg');
 
     let currData = data.slice(0),
-        currMouseY = 0,
         timer;
 
     xScale.domain([0, 2*Math.PI])

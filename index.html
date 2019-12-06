@@ -1,5 +1,6 @@
 ---
 layout: default
+tags: ['writes','talks','teaches','codes']
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -9,46 +10,56 @@ layout: default
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>nabilk</title>
 
-    <link rel="stylesheet" href="{{ site.baseurl }}/assets/main.css?v=2.1.3">
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/main.css">
+    <noscript>
+            <style type="text/css">
+                .row, #scrolltotop {display:block;opacity:1;}
+            </style>
+    </noscript>
 </head>
 <body>
 
     <div class="section">
         <div id="blurb">
-        <p>Nabil Kashyap is a librarian plus he <span class="writes">writes</span>, <span class="talks">talks</span>, <span class="teaches">teaches</span>, and <span class="codes">puts things on the web</span>.</p>
+        <p>Nabil Kashyap is a librarian plus he <a class="writes" href="#writes">writes</a>, <a class="talks" href="#talks">talks</a>, <a class="teaches" href="#teaches">teaches</a>, and <a class="codes" href="#codes">puts things on the web</a>.</p>
         <svg></svg>
         </div>
     </div>
 
     <div class="section">
 
+    {% for c in page.tags %}
+    <div class="row" id="{{ c }}">
     {% for d in site.data.activity %}
 
     {% for year in  d %}
-    <div class="row">
 
+    {% assign activities = year[1] | where: 'tags', c %}
+
+    {% if activities.size > 0 %}
     <p class="year">{{ year[0] }}</p>
+    {% endif %}
 
-    {% for activities in year %}
+    {% for a in activities %}
 
-    {% for activity in activities %}
-    <div class="card {{ activity.tags | join: ' ' }}">
+    <div class="card {{ a.tags | join: ' ' }}">
 
-    {% if activity.url %}<a href="{{ activity.url }}">{% endif %}
-    {{ activity.title | markdownify }}
-    {% if activity.url %}</a>{% endif %}
-    {{ activity.desc | markdownify }}
+    {% if activity.url %}<a href="{{ a.url }}">{% endif %}
+    {{ a.title | markdownify }}
+    {% if a.url %}</a>{% endif %}
+    {{ a.desc | markdownify }}
     </div>
     {% endfor %}
 
     {% endfor %}
+    {% endfor %}
+
+
+    </div>
+    {% endfor %}
     </div>
 
-    {% endfor %}
-    {% endfor %}
-    </div>
-
-<span id="scrolltotop">&uarr;</span>
+<a id="scrolltotop" href="#">&uarr;</a>
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="{{ site.baseurl }}/assets/main.js"></script>
 </body>

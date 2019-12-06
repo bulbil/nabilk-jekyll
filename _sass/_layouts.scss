@@ -46,28 +46,28 @@ body p{
 
 // links
 
-#blurb span, a {
+a {
   color: $bodycolor;
   transition: color 350ms;
 }
 
-#blurb span.writes:hover,
-.writes a:hover{
+#blurb a.writes:hover,
+#writes a:hover{
   color: $c;
 }
 
-#blurb span.talks:hover,
-.talks a:hover{
+#blurb a.talks:hover,
+#talks a:hover{
   color: $m;
 }
 
-#blurb span.teaches:hover,
-.teaches a:hover{
+#blurb a.teaches:hover,
+#teaches a:hover{
   color: $y;
 }
 
-#blurb span.codes:hover,
-.codes a:hover{
+#blurb a.codes:hover,
+#codes a:hover{
   color: $k;
 }
 
@@ -77,10 +77,8 @@ body p{
 body {
   display: flex;
   justify-content: flex-start;
-  // align-content: center;
   align-content: stretch;
   flex-flow: column;
-  // min-height: 50rem;
 
   @media screen and (min-width: $big) {
     flex-flow: row;
@@ -90,10 +88,10 @@ body {
 
 .section {
     z-index: 7;
-    padding: 0;
 
     &:first-of-type{
       justify-content: flex-start;
+      padding-top: 2em;
     }
 
     &:nth-of-type(2) {
@@ -108,7 +106,8 @@ body {
         margin-top: 1.25em;
       }
       @media screen and (min-width: $big){
-          margin: 1em 0 0 1em;
+          margin: 1em 0 0 2em;
+          padding-top: 2em;
       }
 
   }
@@ -163,14 +162,16 @@ $b: 5px solid;
 .row {
   margin: 0 1.25em;
   max-width: $cw;
+
+  display: none;
+  opacity: 0;
+
   @media screen and (min-width: $medium){
     margin: 0 auto;
   }
 }
 .year {
     margin: 0;
-    display: none;
-    opacity: 0;
     font-weight: bold;
     width: 100%;
 
@@ -179,8 +180,6 @@ $b: 5px solid;
 
 .card {
   max-width: $cw;
-  display: none;
-  opacity: 0;
   z-index: 5;
 
   @media screen and (min-width: $medium){
@@ -190,8 +189,7 @@ $b: 5px solid;
   @include transition();
 }
 
-.year.show,
-.card.show, 
+.row.show, 
 #scrolltotop.show {
   opacity: 1;
 }
@@ -201,6 +199,7 @@ $b: 5px solid;
   position: fixed;
   bottom: 1em;
   left: calc(50% - .5em);
+  text-decoration: none;
 
   display: none;
   opacity: 0;
@@ -216,7 +215,6 @@ $b: 5px solid;
   font-size: $basesize * 2;
   font-weight: bold;
   text-align: center;
-  cursor: pointer;
 
   @include transition();
 }
