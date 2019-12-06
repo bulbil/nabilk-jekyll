@@ -165,7 +165,7 @@ $b: 5px solid;
 
   display: none;
   opacity: 0;
-
+  @include transition();
   @media screen and (min-width: $medium){
     margin: 0 auto;
   }
@@ -174,8 +174,6 @@ $b: 5px solid;
     margin: 0;
     font-weight: bold;
     width: 100%;
-
-    @include transition();
 }
 
 .card {
@@ -238,16 +236,9 @@ svg {
     stroke-width: 5px;
     padding: 0;
     opacity: 0;
-
-    @include transition();
   }
 
   path#cyan { stroke: darken($c,5%); }
   path#magenta { stroke: darken($m,5%); }
   path#yellow { stroke: $y; }
-
-  path.show {
-    opacity: 1;
-  }
-
 }

@@ -29,11 +29,13 @@
         if(show){
             el.style('display', 'block')
                 .transition()
+                .duration(100)
                 .on('end', function() { el.classed('show', true) });
         } else {
             el.classed('show',false)
                 .transition()
-                .style('display', 'none')
+                .duration(100)
+                .on('end', function() { el.style('display', 'none') });
         }
     }
 
@@ -101,8 +103,9 @@
         .attr('id', d => d)
         .attr('d', sine(currData));
 
-    lines.classed('show',true);
     blurb.classed('bordered',true);
+    lines.transition()
+        .style('opacity',1);
 
     function updatePath(reset = false) {
 
