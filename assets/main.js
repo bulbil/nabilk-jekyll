@@ -1,3 +1,5 @@
+/* くコ:彡 www.nabilk.com script 2019.11.24 くコ:彡 */
+
 (function () {
 
     const scrollArrow = d3.select('#scrolltotop'),
@@ -69,7 +71,6 @@
     })
  
     // sine wave doodad
-
     const height = 100,
     width = 480,
     colors = ['cyan','magenta','yellow'],
@@ -80,7 +81,11 @@
     hFactor = 10,
     yRange = d3.range(0,height,height/10).concat(d3.range(0,height,height/11).reverse()),
     data = xRange.map( (d,i) => [ d, 0] ),
-    el = d3.select('svg');
+    el = d3.select('svg') 
+    // because firefox renders subpixels differently
+    m = (/Linux|Firefox/).test(navigator.userAgent) ? 0 : .5;
+
+    console.log(m)
 
     let currData = data.slice(0),
         timer;
@@ -93,7 +98,7 @@
 
     const sine = d3.line()
         .x(d => xScale(d[0]))
-        .y(d => yScale(Math.sin(d[1])))
+        .y(d => yScale(Math.sin(d[1])) - m)
         .curve(d3.curveMonotoneX);
 
     const lines = el.selectAll('path')
