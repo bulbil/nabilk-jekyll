@@ -10,7 +10,7 @@ tags: ['writes','talks','teaches','codes']
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{ site.title }}</title>
 
-    <link rel="icon" href="" type="image/ico" href="{{site.baseurl}}/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="favicon.ico?">
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/main.css">
     <noscript>
             <style type="text/css">
@@ -44,14 +44,12 @@ tags: ['writes','talks','teaches','codes']
     {% for a in activities %}
 
     <div class="card {{ a.tags | join: ' ' }}">
-
-    {% if activity.url %}<a href="{{ a.url }}">{% endif %}
-    {{ a.title | markdownify }}
-    {% if a.url %}</a>{% endif %}
-    {{ a.desc | markdownify }}
+    <p>
+    {% if a.url %}<a href="{{ a.url }}">{% endif %}{{ a.title | markdownify | remove: '<p>' | remove: '</p>' | strip }}{% if a.url %}</a>{% endif %}.
+    {% if a.desc %}{{ a.desc | markdownify | remove: '<p>' | remove: '</p>' | strip }}.{% endif %}
+    </p>
     </div>
     {% endfor %}
-
     {% endfor %}
     {% endfor %}
 
