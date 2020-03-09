@@ -73,18 +73,36 @@ tags: ['writes','talks','teaches','codes']
 
     {% for a in activities %}
 
-    <div class="card {{ a.tags | join: ' ' }}">
-    <p>
-    {% if a.url %}<a href="{{ a.url }}">{% endif %}{{ a.title | markdownify | remove: '<p>' | remove: '</p>' | strip }}{% if a.url %}</a>{% endif %}.
-    {% if a.desc %}{{ a.desc | markdownify | remove: '<p>' | remove: '</p>' | strip }}.{% endif %}
-    </p>
-    </div>
+    {% include activity-card.html a = a %}
+
     {% endfor %}
     {% endfor %}
     {% endfor %}
 
 
     </div>
+
+    {% if c == 'writes' %}
+        <div class="row" id="{{ c }}">
+            <h2 class="year">Listen</h2>
+            <hr/>
+            {% for d in site.data.activity %}
+        
+            {% for year in  d %}
+        
+            {% assign activities = year[1] | where: 'tags', 'listen' %}
+                
+            {% for a in activities %}
+        
+            {% include activity-card.html a = a %}
+            {% endfor %}
+            {% endfor %}
+            {% endfor %}
+        
+        
+        </div>
+    {% endif %}
+
     {% endfor %}
     </div>
 
