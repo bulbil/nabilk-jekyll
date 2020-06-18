@@ -1,5 +1,9 @@
 - 2020:
 # 2020 pubs
+  - title: '"Travelvet," *Full Stop*'
+    desc: "(essay)"
+    url: https://www.full-stop.net/2020/03/11/features/nabil-kashyap/travelvet/
+    tags: [writes]
   - title: '"*The Grave on the Wall* by Brandon Shimoda," *Full Stop*'
     desc: "(review)"
     url: https://www.full-stop.net/2020/01/17/reviews/nabil-kashyap/the-grave-on-the-wall-brandon-shimoda/
@@ -9,6 +13,13 @@
     desc: "Interview"
     url: https://www.full-stop.net/2020/02/18/blog/the-editors/podcast-introducing-the-inaugural-full-stop-fellows/
     tags: [other, listen]
+# 2020 talks
+  - title: 'Working at the Intersection: Digital Humanities Pedagogy, Social Justice, and Librarianship, Digital Humanities, Ottawa (event moved to virtual)'
+    desc: With Pamella Lach, Megan Martinsen, Amanda Visconti, Brandon Walsh, R.C. Meissler, and Heather Froehlich
+    tags: [talks]
+  - title: '"DH in the Classroom Podcast," Digital Resources & Methods Lab, Price Lab, University of Pennsylvania (in lieu of canceled weeklong workshop)'
+    desc: "With Roberto Vargas"
+    tags: [talks]
 - 2019:
 # 2019 pubs
   - title: "*Home Like*, Neighboring Systems"
@@ -57,7 +68,7 @@
     desc: "Faculty training."
     url: http://ds.swarthmore.edu/dsri/
     tags: [teaches]
-  - title: '"DH in the Classroom", Digital Resources & Methods Lab, Price Lab, University of Pennsylvania'
+  - title: '"DH in the Classroom," Digital Resources & Methods Lab, Price Lab, University of Pennsylvania'
     desc: "Training with Katie Rawson and Roberto Vargas."
     tags: [teaches]
 - 2018:
@@ -163,7 +174,7 @@
     tags: [talks]
   - title: '“Correcting the Narrative: Reconsidering the black student protest movement through active documents and documentary activism”, Digital Blackness, Rutgers University'
     tags: [talks]
-  - title: '“Jekyll for Librarians”, Digital Library Federation, Milwaukee'
+  - title: '“Jekyll for Librarians,” Digital Library Federation, Milwaukee'
     desc: With Roberto Vargas
     tags: [talks]
 - 2015:
@@ -176,7 +187,7 @@
     tags: [talks]
 - 2014:
 # 2014 pubs
-  - title: '“My City Year", *Actually People Quarterly*'
+  - title: '“My City Year," *Actually People Quarterly*'
     desc: "(column) 2010-2014"
     url: https://www.carvilleannexpress.com/
     tags: [writes]
