@@ -1,6 +1,6 @@
 <div class="card {{ a.tags | join: ' ' }}">
     <p>
-    {% if a.url %}<a href="{{ a.url }}">{% endif %}{{ a.title | markdownify | remove: '<p>' | remove: '</p>' | strip }}{% if a.url %}</a>{% endif %}.
-    {% if a.desc %}{{ a.desc | markdownify | remove: '<p>' | remove: '</p>' | strip }}{% if c != 'teaches' %}.{% endif %}{% endif %}
+    {% if a.url %}<a href="{{ a.url }}">{% endif %}{{ a.title | markdownify | remove: '<p>' | remove: '</p>' | strip }}{% if a.url %}</a>{% endif %}
+    {% if a.desc %}{{ a.desc | markdownify | remove: '<p>' | remove: '</p>' | strip }}{% if c != 'teaches' %}{% endif %}{% endif %}
     </p>
     </div>
